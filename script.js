@@ -1,30 +1,74 @@
-document.getElementById("loginForm").addEventListener("submit", function(event) {
+const loginForm = document.getElementById("loginForm");
 
-    event.preventDefault();
+const username = document.getElementById("username");
 
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const message = document.getElementById("message");
+const password = document.getElementById("password");
 
-    // SAMPLE LOGIN
-    const correctUsername = "admin";
-    const correctPassword = "12345";
+const togglePassword =
+    document.getElementById("togglePassword");
 
-    if (username === correctUsername && password === correctPassword) {
+const message =
+    document.getElementById("message");
 
-        message.style.color = "green";
-        message.textContent = "Login successful!";
 
-        // Go to another page
-        setTimeout(function() {
-            window.location.href = "dashboard.html";
-        }, 1000);
 
-    } else {
+/* =========================
+   SHOW / HIDE PASSWORD
+========================= */
 
-        message.style.color = "red";
-        message.textContent = "Invalid username or password.";
+togglePassword.addEventListener(
+    "click",
+    function () {
+
+        if (password.type === "password") {
+
+            password.type = "text";
+
+            togglePassword.textContent = "◉";
+
+        } else {
+
+            password.type = "password";
+
+            togglePassword.textContent = "◌";
+
+        }
 
     }
+);
 
-});
+
+
+/* =========================
+   LOGIN
+========================= */
+
+loginForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        if (
+            username.value.trim() === "" ||
+            password.value.trim() === ""
+        ) {
+
+            message.textContent =
+                "Please enter your username and password.";
+
+            message.style.color = "red";
+
+            return;
+        }
+
+
+        message.textContent =
+            "Login successful!";
+
+        message.style.color =
+            "#063875";
+
+    }
+);

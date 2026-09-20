@@ -1,57 +1,619 @@
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
+body {
+
     min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #ffffff;
+
+    color: #111111;
+
     display: flex;
+
     flex-direction: column;
-    background-color: white;
 }
 
 
-/* HEADER */
-header {
-    height: 58px;
-    flex-shrink: 0;
-    background-color: #06356d;
+/* =====================================
+   HEADER
+===================================== */
+
+.header {
+
+    height: 56px;
+
+    width: 100%;
+
+    background: #063875;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    padding: 0 18px;
+
+    padding: 0 23px 0 18px;
+}
+
+
+/* =====================================
+   HEADER LOGO + FIXTRACK
+===================================== */
+
+.header-brand {
+
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
     color: white;
 }
 
 
-/* MAIN */
+.header-brand img {
+
+    width: 58px;
+
+    height: 52px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.header-brand span {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+    line-height: 1;
+}
+
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: bold;
+}
+
+
+nav a:hover {
+
+    opacity: 0.85;
+}
+
+
+.report-top {
+
+    background: white;
+
+    color: #063875 !important;
+
+    padding: 9px 19px;
+
+    border-radius: 7px;
+}
+
+
+
+/* =====================================
+   MAIN
+===================================== */
+
 main {
+
     flex: 1;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    padding: 30px 20px 40px;
 }
 
 
-/* LOGIN BOX */
-.login-box {
-    width: 365px;
-    min-height: 205px;
-    border: 1px solid #06356d;
+
+/* =====================================
+   LOGIN CARD
+===================================== */
+
+.login-card {
+
+    width: 418px;
+
+    height: 350px;
+
+    background: white;
+
+    border: 1.5px solid #063875;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.35);
+
+    padding-top: 58px;
+}
+
+
+.login-card h1 {
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    margin-bottom: 46px;
+}
+
+
+
+/* =====================================
+   FORM
+===================================== */
+
+#loginForm {
+
+    width: 322px;
+
+    margin: auto;
+}
+
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 98px 1fr;
+
+    align-items: center;
+
+    margin-bottom: 7px;
+}
+
+
+.form-row label {
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.form-row input {
+
+    width: 100%;
+
+    height: 19px;
+
+    border: 1px solid #8797a7;
+
+    border-radius: 3px;
+
+    outline: none;
+
+    padding: 2px 6px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.form-row input:focus {
+
+    border-color: #063875;
+}
+
+
+
+/* =====================================
+   PASSWORD
+===================================== */
+
+.password-box {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+.password-box input {
+
+    padding-right: 25px;
+}
+
+
+.password-box button {
+
+    position: absolute;
+
+    right: 3px;
+
+    top: 1px;
+
+    width: 20px;
+
+    height: 17px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+
+
+/* =====================================
+   REMEMBER ME
+===================================== */
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2px;
+
+    margin-top: 6px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+.remember input {
+
+    appearance: none;
+
+    width: 19px;
+
+    height: 20px;
+
+    border: 1px solid #777;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+.remember input:checked::after {
+
+    content: "✓";
+
+    display: block;
+
+    color: #063875;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    line-height: 18px;
+}
+
+
+
+/* =====================================
+   LOGIN BUTTON
+===================================== */
+
+.login-button {
+
+    display: block;
+
+    width: 164px;
+
+    height: 28px;
+
+    margin: 51px auto 0;
+
+    border: none;
+
     border-radius: 6px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
-    padding: 32px 25px;
-}
 
+    background: #063875;
 
-/* FOOTER */
-footer {
-    height: 50px;
-    flex-shrink: 0;
-    background-color: #06356d;
     color: white;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 9px;
 
-    gap: 15px;
-    padding: 5px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.login-button:hover {
+
+    background: #052f62;
+}
+
+
+#message {
+
+    height: 14px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    margin-top: 8px;
+}
+
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+    width: 100%;
+
+    height: 54px;
+
+    background: #063875;
+
+    color: white;
+}
+
+
+.footer-content {
+
+    width: 540px;
+
+    height: 54px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+
+/* =====================================
+   FOOTER BRAND
+===================================== */
+
+.footer-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+
+    white-space: nowrap;
+}
+
+
+.footer-brand img {
+
+    width: 30px;
+
+    height: 30px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.footer-fixtrack {
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.7px;
+
+    margin-left: 3px;
+}
+
+
+.footer-divider {
+
+    width: 1px;
+
+    height: 27px;
+
+    background: white;
+
+    margin-left: 6px;
+
+    margin-right: 6px;
+}
+
+
+.footer-description {
+
+    color: white;
+
+    font-size: 7px;
+
+    line-height: 8px;
+}
+
+
+
+/* =====================================
+   SOCIAL
+===================================== */
+
+.social {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 7px;
+
+    font-weight: bold;
+}
+
+
+.social-title {
+
+    margin-bottom: 2px;
+}
+
+
+.social-icons {
+
+    font-size: 13px;
+
+    line-height: 14px;
+}
+
+
+
+/* =====================================
+   FOOTER BUTTON
+===================================== */
+
+.report-bottom {
+
+    text-decoration: none;
+
+    background: white;
+
+    color: #063875;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    padding: 9px 18px;
+
+    border-radius: 6px;
+}
+
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+
+        height: auto;
+
+        min-height: 70px;
+
+        flex-wrap: wrap;
+
+        padding: 8px 15px;
+    }
+
+
+    nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        padding-bottom: 5px;
+    }
+
+
+    main {
+
+        padding: 40px 15px;
+    }
+
+
+    .login-card {
+
+        width: 100%;
+
+        max-width: 418px;
+    }
+
+
+    footer {
+
+        height: auto;
+
+        padding: 12px;
+    }
+
+
+    .footer-content {
+
+        width: 100%;
+
+        height: auto;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
 }
